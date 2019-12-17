@@ -2,13 +2,13 @@ language: jvm
 os: linux
 dist: trusty
 jdk: openjdk8
-script:
-- "./gradlew build"
+
 services:
 - docker
-after_success:
+script:
+- ./gradlew build
 - docker build -t $IMAGE_NAME .
-- echo "$TOKEN" | docker login  docker.pkg.github.com --username b1412 --password-stdin
+- docker login  docker.pkg.github.com --username b1412 --password $TOKEN
 - docker tag $IMAGE_NAME:latest docker.pkg.github.com/b1412/docker-mysql/$IMAGE_NAME:$TRAVIS_BUILD_NUMBER
 - docker push docker.pkg.github.com/b1412/docker-mysql/$IMAGE_NAME:$TRAVIS_BUILD_NUMBER
 env:
