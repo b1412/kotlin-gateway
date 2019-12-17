@@ -9,8 +9,8 @@ services:
 after_success:
 - docker build -t $IMAGE_NAME .
 - echo "$TOKEN" | docker login  docker.pkg.github.com -u b1412 -p
-- docker tag $IMAGE_NAME:latest docker.pkg.github.com/b1412/docker-mysql/$IMAGE_NAME:$TRAVIS_BUILD_NUMBER
-- docker push docker.pkg.github.com/b1412/docker-mysql/$IMAGE_NAME:$TRAVIS_BUILD_NUMBER
+- docker tag $IMAGE_NAME:latest docker.pkg.github.com/b1412/kotlin-gateway/$IMAGE_NAME:$TRAVIS_BUILD_NUMBER
+- docker push docker.pkg.github.com/b1412/kotlin-gateway/$IMAGE_NAME:$TRAVIS_BUILD_NUMBER
 env:
   global:
-    - IMAGE_NAME=kotlin-eureka
+    - IMAGE_NAME=kotlin-gateway
