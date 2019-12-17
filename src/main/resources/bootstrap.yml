@@ -1,0 +1,11 @@
+server:
+    port: 9999
+spring:
+    application:
+        name: gateway
+    cloud:
+        config:
+            name: gateway
+            password: configpassword
+            uri: http://kotlin-config:7777
+            username: leonzhou

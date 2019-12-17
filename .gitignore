@@ -1,0 +1,46 @@
+# Created by .ignore support plugin (hsz.mobi)
+### Java template
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+.gradle/
+.idea/
+config/gradle/
+config/gradlew
+
+gradle/
+gradlew
+
+config/gradlew.bat
+gradlew.bat
+
+build
+.DS_Store
+/out
+/logs/
+/logPath_IS_UNDEFINED/
+*.iml
+/fx-generator/src/main/resources/generator/local.properties
+/fx-payment/out/
+/payment-api/out/
+/fx-website/src/main/resources/application-local.yml
+/fx-api/out/
