@@ -23,7 +23,7 @@ class CrosFilter : WebFilter {
             headers.add("Access-Control-Allow-Credentials", "true")
             if (request.method === HttpMethod.OPTIONS) {
                 response.statusCode = HttpStatus.OK
-                return Mono.empty<Void>()
+                return Mono.empty()
             }
         }
         return chain.filter(exchange)

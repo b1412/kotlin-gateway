@@ -2,9 +2,11 @@ package com.github.b1412.gateway
 
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient
 
 @SpringBootApplication
-open class GatewayApplication {
+@EnableDiscoveryClient
+class GatewayApplication {
 
     companion object {
 

@@ -8,9 +8,9 @@ import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 
 @Configuration
-open class AdditionalRoutes {
+class AdditionalRoutes {
     @Bean
-    open fun customRouteLocator(builder: RouteLocatorBuilder): RouteLocator {
+    fun customRouteLocator(builder: RouteLocatorBuilder): RouteLocator {
         return builder.routes {
             route(id = "api") {
                 path("/v1/**")
