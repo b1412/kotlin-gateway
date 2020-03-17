@@ -7,5 +7,5 @@ spring:
         config:
             name: gateway
             password: configpassword
-            uri: http://kotlin-config:7777
+            uri: http://config:7777
             username: leonzhou
