@@ -17,7 +17,7 @@ RUN wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSI
     && rm dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz
 
 
-ENTRYPOINT dockerize -timeout 5m  -wait "http://config:7777/application/native,local" && java $JAVA_OPTS -jar /opt/gateway/lib/app.jar $SPRING_BOOT_PROFILE
+ENTRYPOINT dockerize -timeout 5m  -wait "http://config/application/native,prod" && java $JAVA_OPTS -jar /opt/gateway/lib/app.jar $SPRING_BOOT_PROFILE
 
 EXPOSE 9999 9999
 
