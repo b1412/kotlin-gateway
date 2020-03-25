@@ -8,7 +8,7 @@ import org.springframework.web.context.request.ServletRequestAttributes
 import java.util.*
 //import javax.servlet.http.HttpServletRequest
 
-@Configuration
+//@Configuration
 class FeignConfig : RequestInterceptor {
 
     override fun apply(requestTemplate: RequestTemplate) {
