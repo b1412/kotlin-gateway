@@ -23,7 +23,9 @@ dependencies {
     implementation("org.springframework.cloud:spring-cloud-starter-config")
     implementation("org.springframework.cloud:spring-cloud-starter-gateway")
     implementation("org.springframework.cloud:spring-cloud-starter-netflix-eureka-client")
-    
+
+    implementation("org.springframework.cloud:spring-cloud-starter-feign:1.4.5.RELEASE")
+
     implementation("org.springframework.boot:spring-boot-starter-actuator")
     implementation("org.springframework.boot:spring-boot-starter-data-redis")
     
