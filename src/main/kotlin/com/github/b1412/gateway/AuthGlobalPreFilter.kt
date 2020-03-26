@@ -8,7 +8,7 @@ import org.springframework.web.server.ServerWebExchange
 import reactor.core.publisher.Mono
 
 @Component
-class LoggingGlobalPreFilter(
+class AuthGlobalPreFilter(
         val apiClient: ApiClient
 ) : GlobalFilter {
 
@@ -17,19 +17,17 @@ class LoggingGlobalPreFilter(
         val request = exchange.request
         val path = request.uri.path
         val method = request.method!!.name
-        println(path)
-        println(method)
+        println("$method $path")
         if (path == "/v1/login" || path == "/v1/logout") {
             return Mono.empty()
         }
         //val resp = apiClient.login("admin", "1qazxsw2", "4")
         val token = request.headers["Authorization"]?.get(0)
-        println(token)
-        if (token==null){
+        if (token == null) {
             // 403
         }
         val resp = apiClient.filter(token!!, method, path)
-        println(resp)
+        println("filter" + resp)
         return chain.filter(exchange)
     }
 }
