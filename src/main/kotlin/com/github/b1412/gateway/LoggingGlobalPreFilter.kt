@@ -14,9 +14,22 @@ class LoggingGlobalPreFilter(
 
 
     override fun filter(exchange: ServerWebExchange, chain: GatewayFilterChain): Mono<Void> {
-        val resp = apiClient.login("admin", "1qazxsw2", "4")
+        val request = exchange.request
+        val path = request.uri.path
+        val method = request.method!!.name
+        println(path)
+        println(method)
+        if (path == "/v1/login" || path == "/v1/logout") {
+            return Mono.empty()
+        }
+        //val resp = apiClient.login("admin", "1qazxsw2", "4")
+        val token = request.headers["Authorization"]?.get(0)
+        println(token)
+        if (token==null){
+            // 403
+        }
+        val resp = apiClient.filter(token!!, method, path)
         println(resp)
-        println("Global Pre Filter executed")
         return chain.filter(exchange)
     }
 }
