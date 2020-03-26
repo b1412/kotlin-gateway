@@ -16,7 +16,7 @@ class AdditionalRoutes {
                 uri("lb://api/")
             }
             route(id = "payment") {
-                path("/v1/payment/**")
+                path("/v1/payment")
                 uri("lb://payment/")
             }
         }
